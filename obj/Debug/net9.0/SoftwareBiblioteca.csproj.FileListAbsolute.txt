@@ -1,0 +1,15 @@
+C:\Projetos\SoftwareBiblioteca\bin\Debug\net9.0\SoftwareBiblioteca.exe
+C:\Projetos\SoftwareBiblioteca\bin\Debug\net9.0\SoftwareBiblioteca.deps.json
+C:\Projetos\SoftwareBiblioteca\bin\Debug\net9.0\SoftwareBiblioteca.runtimeconfig.json
+C:\Projetos\SoftwareBiblioteca\bin\Debug\net9.0\SoftwareBiblioteca.dll
+C:\Projetos\SoftwareBiblioteca\bin\Debug\net9.0\SoftwareBiblioteca.pdb
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\SoftwareBiblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\SoftwareBiblioteca.AssemblyInfoInputs.cache
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\SoftwareBiblioteca.AssemblyInfo.cs
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\SoftwareBiblioteca.csproj.CoreCompileInputs.cache
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\SoftwareBiblioteca.sourcelink.json
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\SoftwareBiblioteca.dll
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\refint\SoftwareBiblioteca.dll
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\SoftwareBiblioteca.pdb
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\SoftwareBiblioteca.genruntimeconfig.cache
+C:\Projetos\SoftwareBiblioteca\obj\Debug\net9.0\ref\SoftwareBiblioteca.dll

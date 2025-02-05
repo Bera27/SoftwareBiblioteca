@@ -10,7 +10,9 @@ namespace SoftwareBiblioteca.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Telefone { get; set; }
+        public string Endereco { get; set; }
         public string LivroAlugado { get; set; }
-        public DateTime DataDevolucao { get; set; }
+        public DateTime DataAluguel { get; set; }
+        public string DataDevolucao { get; set; }
     }
 }

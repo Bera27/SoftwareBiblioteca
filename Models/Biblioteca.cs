@@ -8,6 +8,8 @@ namespace SoftwareBiblioteca.Models
     public class Biblioteca
     {
         List<Livro> livros = new List<Livro>();
+        List<Pessoa> pessoas = new List<Pessoa>();
+
 
         public void LimparConsole()
         {
@@ -26,25 +28,33 @@ namespace SoftwareBiblioteca.Models
 
             Console.Clear();
 
-            Console.WriteLine("Adicione o Preço da Venda do Livro:");
-            decimal precoVenda = decimal.Parse(Console.ReadLine());
-            
-            Console.WriteLine("Adicione o Preço do Aluguel do Livro:");
-            decimal precoAluguel = decimal.Parse(Console.ReadLine());
-
-            Console.Clear();
-
-            Console.WriteLine("Adicione a Quantidade dos Livros em Estoque:");
-            int quantidade = int.Parse(Console.ReadLine());
 
             Console.WriteLine("O Livro vai pode ser alugado: Sim/Não");
             string resposta = Console.ReadLine().ToUpper();
 
-            bool aluga = resposta.Equals("SIM", StringComparison.CurrentCultureIgnoreCase) || resposta.Equals("S", StringComparison.CurrentCultureIgnoreCase);
+            bool aluga = resposta.Equals("SIM", StringComparison.CurrentCultureIgnoreCase) || resposta.Equals("S", StringComparison.CurrentCultureIgnoreCase); // Torna a resposta um bool true ou false
+
+            Console.Clear();
+
+            Console.WriteLine("Adicione o Preço da Venda do Livro:");
+            decimal precoVenda = decimal.Parse(Console.ReadLine());
+
+            decimal precoAluguel = 0;
+
+            if (aluga == true)  // verifica se o livro pode ser alugado
+            {
+                Console.WriteLine("Adicione o Preço do Aluguel do Livro:");
+                precoAluguel = decimal.Parse(Console.ReadLine());
+            }
+
+            Console.Clear();
+
+            Console.WriteLine("Adicione a Quantidade do Livro em Estoque:");
+            int quantidade = int.Parse(Console.ReadLine());
 
             var novoLivro = new Livro()
             {
-                Nome = nome,
+                Titulo = nome,
                 Autor = autor,
                 PrecoVenda = precoVenda,
                 PrecoAluguel = precoAluguel,
@@ -64,7 +74,7 @@ namespace SoftwareBiblioteca.Models
             Console.WriteLine("Qual Livro deseja Alugar:");
             string BuscaLivro = Console.ReadLine();
 
-            var livroEncontrado = livros.FirstOrDefault(p => p.Nome.Equals(BuscaLivro, StringComparison.OrdinalIgnoreCase));
+            var livroEncontrado = livros.FirstOrDefault(p => p.Titulo.Equals(BuscaLivro, StringComparison.OrdinalIgnoreCase));  // Busca o Nome do livro
 
             if (livroEncontrado == null)
             {
@@ -77,7 +87,73 @@ namespace SoftwareBiblioteca.Models
             }
             else
             {
-                Console.WriteLine($"Livro: {livroEncontrado.Nome} | {livroEncontrado.Autor} | {livroEncontrado.PrecoAluguel}");
+                Console.WriteLine($"Livro: {livroEncontrado.Titulo} | Autor: {livroEncontrado.Autor} | Preço do Aluguel {livroEncontrado.PrecoAluguel:C}");
+            }
+        }
+
+        public void CadastradoPessoa()
+        {
+            Console.WriteLine("Digite o Nome da Pessoa:");
+            string nome = Console.ReadLine().ToUpper();
+
+            Console.WriteLine("Digite o Telefone da Pessoa:");
+            string telefone = Console.ReadLine();
+
+            Console.Clear();
+
+            Console.WriteLine("Digite o Endereço da Pessoa:");
+            string endereco = Console.ReadLine().ToUpper();
+
+            Console.WriteLine("Digite o Titulo do Livro Alugado:");
+            string livroAlugado = Console.ReadLine().ToUpper();
+
+            Console.Clear();
+
+            Console.WriteLine("Digite a Data que o Livro foi Alugado:");
+            DateTime dataAluguel = DateTime.Now;
+
+            Console.WriteLine("Digite a Data de Devolução:");
+            string dataDevolucao = Console.ReadLine();
+
+            var novoAlguel = new Pessoa()
+            {
+                Nome = nome,
+                Telefone = telefone,
+                Endereco = endereco,
+                LivroAlugado = livroAlugado,
+                DataAluguel = dataAluguel,
+                DataDevolucao = dataDevolucao
+            };
+
+            pessoas.Add(novoAlguel);
+            Console.WriteLine("Cadastro de Cliente Realizado com Sucesso!");
+
+            LimparConsole();
+        }
+
+        public void ListarLivrosAlgados()
+        {
+            Console.Clear();
+            Console.WriteLine("Lista das Pessoas com Livros Alugados:");
+
+            foreach (var item in pessoas)
+            {
+                Console.WriteLine($"Nome: {item.Nome} | Telefone: {item.Telefone} | Endereço: {item.Endereco} | Livro: {item.LivroAlugado} | Data: {item.DataAluguel} | Devolução: {item.DataDevolucao}");
+            }
+
+            LimparConsole();
+        }
+
+        public void BuscaLivro()
+        {
+            Console.WriteLine("Digite o Nome do Livro:");
+            string buscaLivro = Console.ReadLine().ToUpper();
+
+            var buscaFeita = livros.FirstOrDefault(p => p.Titulo.Equals(buscaLivro, StringComparison.OrdinalIgnoreCase));
+
+            if (buscaFeita != null)
+            {
+                Console.WriteLine($"Titulo: {buscaFeita.Titulo} | Autor: {buscaFeita.Autor} | Preço: {buscaFeita.PrecoVenda:C} | Alugar: {buscaFeita.PrecoAluguel:C} | Quantidade: {buscaFeita.Quantidade}");
             }
         }
     }
