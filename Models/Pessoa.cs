@@ -13,6 +13,6 @@ namespace SoftwareBiblioteca.Models
         public string Endereco { get; set; }
         public string LivroAlugado { get; set; }
         public DateTime DataAluguel { get; set; }
-        public string DataDevolucao { get; set; }
+        public DateTime DataDevolucao { get; set; }
     }
 }

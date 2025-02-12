@@ -13,6 +13,7 @@ namespace SoftwareBiblioteca.Models
         public decimal PrecoVenda { get; set; }
         public decimal PrecoAluguel { get; set; }
         public int Quantidade { get; set; }
+        public int EstoqueLivrosAlugados { get; set; }
         public bool Aluga { get; set; }
     }
 }

@@ -9,6 +9,8 @@ while (true)
     Console.WriteLine("3 - Vender Livro");
     Console.WriteLine("4 - Buscar Livro");
     Console.WriteLine("5 - Listar Livros Alugados");
+    Console.WriteLine("6 - Verificar Estoque");
+    Console.WriteLine("7 - Sair");
 
     int resposta = int.Parse(Console.ReadLine());
 
@@ -20,23 +22,28 @@ while (true)
 
         case 2:
             biblioteca.AlugarLivro();
-            biblioteca.CadastradoPessoa();
             break;
 
         case 3:
+            biblioteca.VendaLivro();
             break;
 
         case 4:
             biblioteca.BuscaLivro();
             break;
-        
+
         case 5:
-            biblioteca.ListarLivrosAlgados();
+            biblioteca.ListarLivrosAlugados();
+            break;
+
+        case 6:
+            biblioteca.VerificarEstoque();
             break;
 
 
 
         default:
+            Console.WriteLine("Opeção inválida! Tente novamente.");
             break;
     }
 }
